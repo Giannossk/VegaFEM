@@ -1,0 +1,62 @@
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/camera
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/configFile
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/corotationalLinearFEM
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/elasticForceModel
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/forceModel
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/getopts
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/graph
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/integrator
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/integratorSparse
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/isotropicHyperelasticFEM
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/lighting
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/listIO
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/massSpringSystem
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/minivector
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/objMesh
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/performanceCounter
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/polarDecomposition
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/sceneObject
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/sparseMatrix
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/sparseSolver
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/stvk
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/stencilForceModel
+    ${CMAKE_CURRENT_SOURCE_DIR}/../../libraries/volumetricMesh
+    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
+add_executable(deformsim interactiveDeformableSimulator.cpp initGraphics.cpp)
+target_include_directories(deformsim
+  PUBLIC
+    ${GLUI_INCLUDE_DIRS}
+)
+target_link_libraries(deformsim
+  sceneObject
+  integrator
+  integratorSparse
+  elasticForceModel
+  forceModel
+  sparseMatrix
+  lighting
+  listIO
+  configFile
+  volumetricMesh
+  getopts
+  camera
+  graph
+  isotropicHyperelasticFEM
+  minivector
+  stvk
+  stencilForceModel
+  corotationalLinearFEM
+  polarDecomposition
+  massSpringSystem
+  objMesh
+  sparseSolver
+  ${OPENGL_gl_LIBRARY}
+  ${GLUT_glut_LIBRARY}
+  ${OPENGL_glu_LIBRARY}
+  ${GLUI_LIBRARY}
+)

@@ -1,0 +1,11 @@
+vega_add_library(windingNumber
+  SOURCES
+    windingNumber.cpp
+  PUBLIC_HEADERS
+    windingNumber.h
+)
+target_link_libraries(windingNumber
+  PUBLIC
+    objMesh
+    minivector 
+)

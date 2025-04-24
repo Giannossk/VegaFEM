@@ -1,0 +1,11 @@
+vega_add_library(renderVolumetricMesh
+  SOURCES
+    renderVolumetricMesh.cpp
+  PUBLIC_HEADERS
+    renderVolumetricMesh.h
+)
+target_link_libraries(renderVolumetricMesh
+  PUBLIC
+    volumetricMesh
+    openGLHelper
+)

@@ -1,0 +1,24 @@
+vega_add_library(integratorSparse
+  SOURCES
+    centralDifferencesSparse.cpp
+    eulerSparse.cpp
+    implicitBackwardEulerSparse.cpp
+    implicitNewmarkSparse.cpp
+    integratorBaseSparse.cpp
+  PUBLIC_HEADERS
+    centralDifferencesSparse.h
+    eulerSparse.h
+    implicitBackwardEulerSparse.h
+    implicitNewmarkSparse.h
+    integratorBaseSparse.h
+)
+target_link_libraries(integratorSparse
+  PUBLIC
+    integrator 
+    performanceCounter 
+    constrainedDOFs 
+    sparseSolver 
+    forceModel
+  INTERFACE
+    sparseMatrix
+)

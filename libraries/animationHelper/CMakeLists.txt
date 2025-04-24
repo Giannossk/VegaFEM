@@ -1,0 +1,20 @@
+vega_add_library(animationHelper
+  SOURCES 
+  	handleControl.cpp
+  	handleScript.cpp
+  	simulationRecorder.cpp
+  PUBLIC_HEADERS
+    handleControl.h
+    handleScript.h
+    simulationRecorder.h
+)
+target_link_libraries(animationHelper
+  PUBLIC
+    ${OPENGL_LIBRARIES}
+    matrixIO 
+    minivector 
+    basicAlgorithms 
+    camera 
+    openGLHelper 
+    listIO
+)

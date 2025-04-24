@@ -1,0 +1,11 @@
+vega_add_library(graph
+  SOURCES
+    graph.cpp
+  PUBLIC_HEADERS
+    graph.h
+)
+target_link_libraries(graph
+  PUBLIC
+    sparseMatrix
+    matrixIO
+)

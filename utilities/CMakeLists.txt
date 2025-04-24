@@ -1,0 +1,12 @@
+if (VegaFEM_BUILD_MODEL_REDUCTION)
+  if (VegaFEM_ENABLE_Cg_SUPPORT)
+    add_subdirectory(reducedDynamicSolver-rt)
+  endif()
+  add_subdirectory(largeModalDeformationFactory)
+endif()
+
+if (VegaFEM_ENABLE_OpenGL_SUPPORT)
+  add_subdirectory(displayObj)
+  add_subdirectory(interactiveDeformableSimulator)
+endif()
+add_subdirectory(volumetricMeshUtilities)

@@ -1,0 +1,43 @@
+vega_add_library(volumetricMesh
+  SOURCES
+    volumetricMeshParser.cpp
+    generateInterpolationMatrix.cpp
+    generateMassMatrix.cpp
+    generateSurfaceMesh.cpp
+    generateMeshGraph.cpp
+    computeStiffnessMatrixNullspace.cpp
+    cubicMesh.cpp
+    tetMesh.cpp
+    volumetricMeshLoader.cpp
+    volumetricMesh.cpp
+    volumetricMeshENuMaterial.cpp
+    volumetricMeshMooneyRivlinMaterial.cpp
+    generateGradientMatrix.cpp
+    interpolationWeightsMultiLoad.cpp
+    volumetricMeshDeformationGradient.cpp
+    volumetricMeshOrthotropicMaterial.cpp
+  PUBLIC_HEADERS
+    computeStiffnessMatrixNullspace.h
+    cubicMesh.h
+    generateInterpolationMatrix.h
+    generateMassMatrix.h
+    generateMeshGraph.h
+    generateSurfaceMesh.h
+    tetMesh.h
+    volumetricMesh.h
+    volumetricMeshENuMaterial.h
+    volumetricMeshLoader.h
+    volumetricMeshMooneyRivlinMaterial.h
+    volumetricMeshParser.h
+    generateGradientMatrix.h
+    interpolationWeightsMultiLoad.h
+    volumetricMeshDeformationGradient.h
+    volumetricMeshOrthotropicMaterial.h
+)
+target_link_libraries(volumetricMesh
+  PUBLIC
+    sparseMatrix
+    graph
+    objMesh
+    minivector
+)

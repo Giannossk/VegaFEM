@@ -1,0 +1,10 @@
+vega_add_library(glslPhong
+  SOURCES
+    glslPhong.cpp
+  PUBLIC_HEADERS
+    glslPhong.h
+)
+target_link_libraries(glslPhong
+  PUBLIC
+    ${OPENGL_LIBRARIES}
+)

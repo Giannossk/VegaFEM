@@ -1,0 +1,38 @@
+set(EFM_SRCS
+  corotationalLinearFEMForceModel.cpp
+  massSpringSystemForceModel.cpp
+  StVKForceModel.cpp
+  isotropicHyperelasticFEMForceModel.cpp
+  linearFEMForceModel.cpp
+)
+
+vega_add_library(elasticForceModel
+  SOURCES 
+    corotationalLinearFEMForceModel.cpp
+    massSpringSystemForceModel.cpp
+    StVKForceModel.cpp
+    isotropicHyperelasticFEMForceModel.cpp
+    linearFEMForceModel.cpp
+    clothBWForceModel.cpp
+  PUBLIC_HEADERS
+    corotationalLinearFEMForceModel.h 
+    massSpringSystemForceModel.h 
+    StVKForceModel.h 
+    isotropicHyperelasticFEMForceModel.h 
+    linearFEMForceModel.h 
+    clothBWForceModel.h
+)
+
+target_link_libraries(elasticForceModel
+  PUBLIC
+    forceModel 
+    corotationalLinearFEM 
+    massSpringSystem 
+    stvk 
+    isotropicHyperelasticFEM 
+    clothBW
+  INTERFACE
+    sparseMatrix
+    minivector
+    volumetricMesh
+)

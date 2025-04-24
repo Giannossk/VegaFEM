@@ -1,0 +1,22 @@
+vega_add_library(immersionMesher
+  SOURCES
+    immersionGraphNode.cpp
+    immersionMesherBuildGraph.cpp
+    immersionMesherCellComplex.cpp
+    immersionMesherGenerateTetMesh.cpp
+  PUBLIC_HEADERS
+    immersionMesher.h 
+    immersionGraphNode.h
+)
+target_link_libraries(immersionMesher
+  PUBLIC
+    virtualTets 
+    exactArithmetic 
+    mesh 
+    basicAlgorithms 
+    interpolationCoordinates
+    performanceCounter
+    libiglInterface
+    minivector
+    listIO
+)

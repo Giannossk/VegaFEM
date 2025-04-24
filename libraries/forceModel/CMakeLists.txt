@@ -1,0 +1,13 @@
+vega_add_library(forceModel
+  SOURCES
+    forceModel.cpp
+    finiteDifferenceTester.cpp
+  PUBLIC_HEADERS
+    forceModel.h
+    finiteDifferenceTester.h
+)
+target_link_libraries(forceModel
+  PUBLIC
+    sparseMatrix
+    basicAlgorithms
+)

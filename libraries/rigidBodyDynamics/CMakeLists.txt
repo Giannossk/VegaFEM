@@ -1,0 +1,12 @@
+vega_add_library(rigidBodyDynamics
+  SOURCES
+    rigidBody.cpp
+    rigidBody_generalTensor.cpp
+  PUBLIC_HEADERS
+    rigidBody.h
+    rigidBody_generalTensor.h
+)
+target_link_libraries(rigidBodyDynamics
+  PUBLIC
+    quaternion
+)

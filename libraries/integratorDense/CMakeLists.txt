@@ -1,0 +1,27 @@
+vega_add_library(integratorDense
+  SOURCES
+    centralDifferencesDense.cpp
+    implicitBackwardEulerDense.cpp
+    implicitNewmarkDense.cpp
+    integratorBaseDense.cpp
+    integratorMulti1D.cpp
+  PUBLIC_HEADERS
+    implicitNewmarkDenseMulti1D.h 
+    integratorMulti1D.h 
+    centralDifferencesDense.h 
+    implicitBackwardEulerDense.h 
+    implicitNewmarkDense.h 
+    integratorBaseDense.h 
+    IPIVC.h
+)
+target_link_libraries(integratorDense
+  PUBLIC
+    matrix
+    matrixIO
+    integrator
+    performanceCounter
+    reducedForceModel
+    ${BLAS}
+    ${CBLAS_LIBRARY}
+    ${LAPACK_LIBRARIES}
+)

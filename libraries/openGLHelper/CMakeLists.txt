@@ -1,0 +1,24 @@
+vega_add_library(openGLHelper
+  SOURCES
+    openGLHelper.cpp
+    printBitmap.cpp
+    saveScreenShot.cpp
+    handleRender.cpp
+    inputDevice.cpp
+  PUBLIC_HEADERS
+    openGLHelper.h
+    printBitmap.h
+    saveScreenShot.h
+    fog.h
+    handleRender.h
+    inputDevice.h
+)
+target_link_libraries(openGLHelper
+  PUBLIC
+    matrixIO
+    imageIO
+    ${OPENGL_LIBRARIES}
+    ${GLUT_LIBRARY}
+    minivector
+)
+

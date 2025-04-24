@@ -1,0 +1,36 @@
+set(stvk_srcs
+    StVKFEM.cpp
+    cubicMeshIntegrals.cpp
+    StVKCubeABCD.cpp
+    StVKElementABCD.cpp
+    StVKElementABCDLoader.cpp
+    StVKHessianTensor.cpp
+    StVKInternalForces.cpp
+    StVKStiffnessMatrix.cpp
+    StVKTetABCD.cpp
+    StVKTetHighMemoryABCD.cpp
+)
+set(stvk_hdrs
+    StVKFEM.h
+    StVKCubeABCD.h
+    StVKElementABCD.h
+    StVKElementABCDLoader.h
+    StVKHessianTensor.h
+    StVKInternalForces.h
+    StVKStiffnessMatrix.h
+    StVKTetABCD.h
+    StVKTetHighMemoryABCD.h
+)
+
+vega_add_library(stvk
+  SOURCES
+    ${stvk_srcs}
+  PUBLIC_HEADERS
+    ${stvk_hdrs}
+)
+target_link_libraries(stvk
+  PUBLIC
+    minivector
+    volumetricMesh
+    sparseMatrix
+)

@@ -1,0 +1,27 @@
+vega_add_library(virtualTets
+  SOURCES
+    geometryQueryER.cpp
+    tetTriCutFeature.cpp
+    tetTriMeshCutting.cpp
+    tetTriPiece.cpp
+    virtualTets-via-csg.cpp
+    virtualTets.cpp
+  PUBLIC_HEADERS
+    geometryQueryER.h
+    tetTriCutFeature.h
+    tetTriCuttingData.h
+    tetTriMeshCutting.h
+    tetTriPiece.h
+    virtualTets-via-csg.h
+    virtualTets.h
+)
+target_link_libraries(virtualTets
+  PUBLIC
+    basicAlgorithms
+    exactArithmetic
+    mesh
+    performanceCounter
+    interpolationCoordinates
+    libiglInterface
+)
+
